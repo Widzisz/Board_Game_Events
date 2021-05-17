@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { creat_event } from './components/creat_event/creat_event';
+import { creat_user } from './components/creat_user/creat_user';
+import { main_page } from './components/main_page/main_page';
+import { user_profile } from './components/user_profile/user_profile';
+import { welcome_page } from './components/welcome_page/welcome_page';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import './App.scss';
+
+const App = () => {
+    return (
+        <div className="App">
+            <h1>Game Board Events</h1>
+        </div>
+    );
+};
 
 export default App;
