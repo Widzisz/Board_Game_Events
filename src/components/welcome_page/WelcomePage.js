@@ -3,7 +3,7 @@ import './welcome_page.scss';
 import StrangerImage from '../../Images/Stranger 4.png';
 
 const WelcomePage = () => {
-    const title = 'Hello Straner ';
+    const title = 'Hello Stranger ';
     const text = 'Are you looking for new companions for your adventure?';
 
     return (
