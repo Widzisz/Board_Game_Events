@@ -1,0 +1,25 @@
+.welcome__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.welcome__section {
+    width: 100%;
+    border: 2px solid red;
+}
+
+.welcome__section-title {
+    color: white;
+}
+.welcome__section-text {
+    color: red;
+}
+.welcome__section-btn1 {
+}
+.welcome__section-btn2 {
+}
+
+.welcome__image {
+    width: 100%;
+
+}
