@@ -1,11 +1,14 @@
+
 .welcome__container {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+
 }
 .welcome__section {
     width: 100%;
     border: 2px solid red;
+    display: flex;
+    flex-direction: column;
 }
 
 .welcome__section-title {

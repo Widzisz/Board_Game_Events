@@ -3,8 +3,9 @@ import './creat_event.scss';
 
 const CreatEvent = () => {
     return (
-        <div>
-            <h2>It is a board game time</h2>
+        <div className="createvent__container">
+            <label className="form-label">Number of Players</label>
+            <input className="form-input" type="number" name="players" placeholder="" />
         </div>
     );
 };

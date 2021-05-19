@@ -4,7 +4,8 @@ import StrangerImage from '../../Images/Stranger 4.png';
 
 const WelcomePage = () => {
     const title = 'Hello Stranger ';
-    const text = 'Are you looking for new companions for your adventure?';
+    const text =
+        'Are you looking for new companions for your adventure? If so, tell me your name. If you are not sure yet, you can have a look around. ';
 
     return (
         <div className="welcome__container">
