@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.scss';
+import { useState, useEffect } from 'react';
+import { db } from './firebase';
 import NavBar from './components/nav_bar/NavBar';
 // import WelcomePage from './components/welcome_page/WelcomePage';
 // import CreatUser from './components/creat_user/CreatUser';
