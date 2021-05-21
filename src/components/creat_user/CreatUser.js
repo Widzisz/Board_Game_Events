@@ -1,14 +1,19 @@
 import React from 'react';
 import './creat_user.scss';
 import { useForm } from 'react-hook-form';
-//connection between ReactHook and Yup
+//connection between ReactHookForm and Yup
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { Link } from 'react-router-dom';
 
 const schema = yup.object().shape({
-    userName: yup.string().required('How should I call you?'),
-    email: yup.string().email().required(),
-    password: yup.string().min(4).max(10).required(),
+    userName: yup.string().required('What is your name?'),
+    email: yup.string().email().required('Email is a required field'),
+    password: yup
+        .string()
+        .min(4, 'Password must be at least 4 characters')
+        .max(10)
+        .required(),
     confirmPassword: yup.string().oneOf([yup.ref('password'), null]),
 });
 
@@ -25,38 +30,45 @@ const CreatUser = () => {
     };
     return (
         <section className="form__container">
-            <h2 className="form__title">Join us!</h2>
-
             <form className="form" onSubmit={handleSubmit(submitForm)}>
+                <h2 className="form__title">Join us!</h2>
+
                 <input
+                    className="form__input"
                     type="text"
                     name="firstName"
-                    placeholder="Your Name..."
+                    placeholder="Your Name"
                     {...register('userName')}
                 />
-                <p>{errors.userName?.message}</p>
+                <p className="error">{errors.userName?.message}</p>
                 <input
+                    className="form__input"
                     type="text"
                     name="email"
-                    placeholder="Email..."
+                    placeholder="Email"
                     {...register('email')}
                 />
-                <p>{errors.email?.message}</p>
+                <p className="error">{errors.email?.message}</p>
                 <input
+                    className="form__input"
                     type="password"
                     name="password"
-                    placeholder="Password..."
+                    placeholder="Password"
                     {...register('password')}
                 />
-                <p>{errors.password?.message}</p>
+                <p className="error">{errors.password?.message}</p>
                 <input
+                    className="form__input"
                     type="password"
                     name="confirmPassword"
-                    placeholder="Confirm Password..."
+                    placeholder="Confirm Password"
                     {...register('confirmPassword')}
                 />
-                <p>{errors.confirmPassword && 'Password Should Match!'}</p>
-                <input type="submit" id="submit" />
+                <p className="error">
+                    {errors.confirmPassword && 'Password Should Match!'}
+                </p>
+
+                <input id="submit" className="form__btn" type="submit" value="submit" />
             </form>
         </section>
     );

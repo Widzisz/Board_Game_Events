@@ -1,6 +1,7 @@
 import React from 'react';
 import './welcome_page.scss';
 import StrangerImage from '../../Images/Stranger 4.png';
+import { Link } from 'react-router-dom';
 
 const WelcomePage = () => {
     const title = 'Hello Stranger ';
@@ -12,8 +13,10 @@ const WelcomePage = () => {
             <section className="welcome__section">
                 <h1 className="welcome__section-title">{title}</h1>
                 <p className="welcome__section-text">{text}</p>
-                <button className="welcome__section-btn1">Skip</button>
-                <button className="welcome__section-btn2">Continue</button>
+
+                <button className="welcome__section-btn1">Continue</button>
+
+                <button className="welcome__section-btn2">Skip</button>
             </section>
             <img
                 className="welcome__image"

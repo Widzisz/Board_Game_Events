@@ -6,20 +6,21 @@ import { Link } from 'react-router-dom';
 const NavBar = () => {
     const navStyle = {
         color: 'white',
+        textDecoration: 'none',
     };
 
     return (
         <nav className="nav">
             <Link to="/">
-                <img className="logo" src={LogoImage} alt="Logo image" />
+                <img className="logo" src={LogoImage} alt="logo" />
             </Link>
             <ul className="nav-ul">
-                <Link style={navStyle} to="/createvent">
-                    <li>Creat New Event</li>
+                <Link style={navStyle} to="/creat-event">
+                    <li className="nav-li">Creat New Event</li>
                 </Link>
             </ul>
-            <Link to="userprofile">
-                <img className="logo-user" src={LogoUserImage} alt="Logo user image" />
+            <Link to="user-profile">
+                <img className="logo-user" src={LogoUserImage} alt="logo user" />
             </Link>
         </nav>
     );
