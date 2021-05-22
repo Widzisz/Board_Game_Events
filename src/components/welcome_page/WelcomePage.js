@@ -13,10 +13,13 @@ const WelcomePage = () => {
             <section className="welcome__section">
                 <h1 className="welcome__section-title">{title}</h1>
                 <p className="welcome__section-text">{text}</p>
+                <Link className="link" to="./creat-user">
+                    <button className="welcome__section-btn1">Continue</button>
+                </Link>
 
-                <button className="welcome__section-btn1">Continue</button>
-
-                <button className="welcome__section-btn2">Skip</button>
+                <Link to="./">
+                    <button className="welcome__section-btn2">Skip</button>
+                </Link>
             </section>
             <img
                 className="welcome__image"
