@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './creat_event.scss';
 import NavBar from '../nav_bar/NavBar';
+import getBoardGames from './GetBoardGames';
 import StarWars from '../../Images/StarWars.jpg';
 
 const createEmptyEvent = (numberOfPlayers, date) => {
@@ -13,6 +14,11 @@ const createEmptyEvent = (numberOfPlayers, date) => {
 const CreatEvent = () => {
     const [players, setPlayers] = useState(2);
     const [date, setDate] = useState();
+    const [games, setGames] = useState([]);
+
+    useEffect(() => {
+        getBoardGames().then(games => setGames(games.map(ele => ele.title)));
+    }, []);
 
     const handleIncrement = () => {
         setPlayers(players + 1);
@@ -48,10 +54,10 @@ const CreatEvent = () => {
                 <img className="creatEvent__img" src={StarWars}></img>
                 <label for="game">Choose a Game: </label>
                 <select className="creatEvent__input" name="game">
-                    <option value="none">Choose a Game</option>
-                    <option value="nemesis">Nemesis</option>
-                    <option value="starwars">Game of Thrones 2ed.</option>
-                    <option value="gameofthrones">Star Wars Rebellion</option>
+                    <option value="none">Choose</option>
+                    {games.map(gameTitle => (
+                        <option value={gameTitle}>{gameTitle}</option>
+                    ))}
                 </select>
 
                 <p className="creatEvent__players">Number of Players: {players}</p>

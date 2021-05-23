@@ -3,7 +3,7 @@ import 'firebase/analytics';
 // import 'firebase/auth';
 import 'firebase/firestore';
 
-const firebaseConfig = {
+firebase.initializeApp({
     apiKey: 'AIzaSyAcSETWc_xxqSkGHzr01QQowSHN4lfrk8g',
     authDomain: 'board-game-events.firebaseapp.com',
     projectId: 'board-game-events',
@@ -11,8 +11,6 @@ const firebaseConfig = {
     messagingSenderId: '668973592176',
     appId: '1:668973592176:web:63e725cb21b954c9218eb5',
     measurementId: 'G-71YV8K6WDZ',
-};
+});
 
-firebase.initializeApp(firebaseConfig);
-
-export const db = firebase.firestore();
+export default firebase.firestore();
