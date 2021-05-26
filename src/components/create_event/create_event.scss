@@ -13,6 +13,14 @@
     width: 10rem;
     height: 10rem;
 }
+.label{
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.3rem;
+    margin-top: 0.8rem;
+
+}
 .creatEvent__players {
     font-size: 1rem;
     font-weight: 600;
@@ -26,8 +34,15 @@
     justify-content: center;
     gap: 0.3rem;
 }
+
+.link{
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+}
+
 .creatEvent__players-btn {
-    width: 40%;
+    width: 25%;
     height: 1.5rem;
     border: none;
     outline: none;
@@ -60,14 +75,8 @@
     font-weight: 500;
 }
 
-// .creat__spot {
-//     height: 100px;
-//     width: 100px;
-//     background: pink;
-// }
-
 .creatEvent__btn {
-    width: 60%;
+    width: 35%;
     height: 2.5rem;
     border: none;
     outline: none;

@@ -6,7 +6,11 @@ const UserProfile = () => {
     return (
         <>
             <NavBar />
-            <h3 className="h3test"> User Profile</h3>;
+            <h3 className="userProfile__title">User Profile</h3>;
+            <div className="userProfile__container">
+                <p className="userProfile__container-p">User Name</p>
+                <p className="userProfile__container-p">Email</p>
+            </div>
         </>
     );
 };

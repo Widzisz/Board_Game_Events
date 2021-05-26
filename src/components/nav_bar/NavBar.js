@@ -15,8 +15,8 @@ const NavBar = () => {
                 <img className="logo" src={LogoImage} alt="logo" />
             </Link>
             <ul className="nav-ul">
-                <Link style={navStyle} to="/creat-event">
-                    <li className="nav-li">Creat New Event</li>
+                <Link style={navStyle} to="/create-event">
+                    <li className="nav-li">Create New Event</li>
                 </Link>
             </ul>
             <Link to="user-profile">

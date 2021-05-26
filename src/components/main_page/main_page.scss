@@ -1,4 +1,29 @@
-
-.main-page{
+.mainPage__container {
+    width: 100%;
+    min-height: calc(100% - 10%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.mainPage__title {
     color: white;
+    padding-top: 1.2rem;
+}
+
+.mainPage__spotsContainer {
+    width: 100%;
+    height: 15rem;
+    background: rgb(214, 214, 214, 0.5);
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.mainPage__spot {
+    width: 3rem;
+    height: 2rem;
+    border-radius: 0.3rem;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.3rem;
+    background: rgb(182, 179, 179);
 }

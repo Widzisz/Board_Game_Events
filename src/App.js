@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 // import { db } from './firebase';
 import NavBar from './components/nav_bar/NavBar';
 import WelcomePage from './components/welcome_page/WelcomePage';
-import CreatUser from './components/creat_user/CreatUser';
+import CreateUser from './components/create_user/CreateUser';
 import MainPage from './components/main_page/MainPage';
-import CreatEvent from './components/creat_event/CreatEvent';
+import CreateEvent from './components/create_event/CreateEvent';
 import UserProfile from './components/user_profile/UserProfile';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -16,10 +16,10 @@ const App = () => {
             <div className="App">
                 <Switch>
                     <Route path="/welcome-page" component={WelcomePage} />
-                    <Route path="/creat-user" component={CreatUser} />
+                    <Route path="/create-user" component={CreateUser} />
                     <Route path="/" exact component={MainPage} />
                     <Route path="/user-profile" component={UserProfile} />
-                    <Route path="/creat-event" component={CreatEvent} />
+                    <Route path="/create-event" component={CreateEvent} />
                 </Switch>
             </div>
         </Router>

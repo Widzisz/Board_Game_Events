@@ -1,5 +1,5 @@
 import React from 'react';
-import './creat_user.scss';
+import './create_user.scss';
 import { useForm } from 'react-hook-form';
 //connection between ReactHookForm and Yup
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -17,7 +17,7 @@ const schema = yup.object().shape({
     confirmPassword: yup.string().oneOf([yup.ref('password'), null]),
 });
 
-const CreatUser = () => {
+const CreateUser = () => {
     const {
         register,
         handleSubmit,
@@ -74,4 +74,4 @@ const CreatUser = () => {
     );
 };
 
-export default CreatUser;
+export default CreateUser;

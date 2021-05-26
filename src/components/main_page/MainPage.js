@@ -1,26 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './main_page.scss';
 import NavBar from '../nav_bar/NavBar';
-
-const renderPlayers = players => {
-    return players.map(player =>
-        player ? <div>{player.name}</div> : <div>Join!!!</div>,
-    );
-};
+import db from '../../firebase';
+import BoardGameEvent from '../board_game_event/BoardGameEvent';
 
 const MainPage = () => {
-    const events = JSON.parse(localStorage.getItem('events') || '[]') || [];
+    const [events, setEvents] = useState([]);
+    const [reload, setReload] = useState();
+
+    useEffect(() => {
+        db.collection('board-game-events')
+            .get()
+            .then(snap => setEvents(snap.docs.map(docs => docs.data())));
+    }, [reload]);
 
     return (
         <div>
             <NavBar />
-            <h2 className="main-page">Main Page</h2>
-            {events.map((ev, ix) => (
-                <>
-                    <div id={ix}>{renderPlayers(ev.players)}</div>
-                    <div>{ev.date} </div>
-                </>
-            ))}
+            <section className="mainPage__container">
+                <h2 className="mainPage__title">Join Event</h2>
+                {events.map(ev => (
+                    <BoardGameEvent {...ev} reload={() => setReload(!reload)} />
+                ))}
+            </section>
         </div>
     );
 };
