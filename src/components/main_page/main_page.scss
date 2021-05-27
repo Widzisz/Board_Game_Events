@@ -18,12 +18,89 @@
     margin: 1rem;
 }
 
-.mainPage__spot {
-    width: 3rem;
-    height: 2rem;
-    border-radius: 0.3rem;
-    text-align: center;
-    margin-top: 1rem;
-    padding: 0.3rem;
-    background: rgb(182, 179, 179);
+// .mainPage__spot {
+//     width: 3rem;
+//     height: 2rem;
+//     border-radius: 0.3rem;
+//     text-align: center;
+//     margin-top: 1rem;
+//     padding: 0.3rem;
+//     background: rgb(182, 179, 179);
+// }
+
+.event__container{
+    width: 100%;
+    margin-top: 1.3rem;
+    background: rgb(214, 214, 214, 0.5);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.event__image {
+    width: 10rem;
+    height: 10rem;
+    padding-top: 0.8rem;
+}
+
+.event__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.3rem;
+    margin-top: 0.8rem;
+}
+
+.event__date{
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.3rem;
+    margin-top: 0.8rem;
+}
+
+.event__location {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.3rem;
+    margin-top: 0.8rem;
+}
+
+.event__host {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.3rem;
+    margin-top: 0.8rem;
+}
+
+// .event__players {
+//     font-size: 1rem;
+//     font-weight: 600;
+//     color: white;
+//     margin-bottom: 0.3rem;
+//     margin-top: 0.8rem;
+// }
+
+.event__spots{
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.3rem;
+    margin-top: 0.8rem;
+}
+
+.event__btn{
+    width: 35%;
+    height: 2.5rem;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    margin-bottom: 0.6rem;
+    cursor: pointer;
+    background: rgb(241, 66, 66);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
 }

@@ -8,7 +8,6 @@ const BoardGameEvent = ({ game, date, spots, location, players, host, id, reload
     //     return <div>{ix}</div>
     // });
 
-    
 
     useEffect(() => {
         game.get().then(snap => {
@@ -17,21 +16,24 @@ const BoardGameEvent = ({ game, date, spots, location, players, host, id, reload
     }, []);
     return (
         <>
-            {gameData ? <img src={gameData.imageSource} /> : null}
-            <div>{(gameData || { title: '' }).title}</div>
-            <div>{new Date(date.seconds * 1000).toDateString()} </div>
-            <div>{location}</div>
-            <div>{host}</div>
-            <div>{players}</div>
-            <div>{spots}</div>
+        <div className="event__container">
+            {gameData ? <img className="event__image" src={gameData.imageSource} /> : null}
+            <div className="event__title">{(gameData || { title: '' }).title}</div>
+            <div className="event__date">{new Date(date.seconds * 1000).toDateString()} </div>
+            <div className="event__location">{location}</div>
+            <div className="event__host">{host}</div>
+            <div className="event__players">{players}</div>
+            <div className="event__spots">{spots}</div>
             {/* {comps} */}
             <button
+            className="event__btn"
                 onClick={() =>
                     db.collection('board-game-events').doc(id).delete().then(reload)
                 }
             >
-                XXX
+                Delete Event
             </button>
+        </div>
         </>
     );
 };
