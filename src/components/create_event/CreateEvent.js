@@ -68,7 +68,6 @@ const CreateEvent = () => {
 
     const imageSource = game ? game.imageSource : noImage;
     const noGameChoosen = !game;
-    console.log(noGameChoosen);
     return (
         <>
             <NavBar />
