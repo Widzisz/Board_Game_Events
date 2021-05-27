@@ -1,9 +1,9 @@
 The project includes:
 
--SASS 
+-SASS
 -React
 -Creat React App
 -React Router
--React Hook Form 
+-React Hook Form
 -Yup
 -Firebase
