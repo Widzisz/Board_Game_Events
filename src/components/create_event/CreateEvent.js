@@ -32,9 +32,9 @@ const CreateEvent = () => {
     };
 
     const handleGameChange = event => {
-        console.log(event.target.value);
         return setGame(games.find(g => g.title === event.target.value));
     };
+
     const handleLocationChange = event => {
         return setLocation(event.target.value);
     };

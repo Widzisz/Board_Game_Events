@@ -7,3 +7,4 @@ The project includes:
 -React Hook Form
 -Yup
 -Firebase
+-Font Awesome

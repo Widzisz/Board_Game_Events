@@ -1,10 +1,12 @@
 import React from 'react';
 import './create_user.scss';
+import db from '../../firebase';
 import { useForm } from 'react-hook-form';
 //connection between ReactHookForm and Yup
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { Link } from 'react-router-dom';
+import SendCreateUser from './SendCreatUser';
 
 const schema = yup.object().shape({
     userName: yup.string().required('What is your name?'),
@@ -68,7 +70,13 @@ const CreateUser = () => {
                     {errors.confirmPassword && 'Password Should Match!'}
                 </p>
 
-                <input id="submit" className="form__btn" type="submit" value="submit" />
+                <input
+                    id="submit"
+                    className="form__btn"
+                    type="submit"
+                    value="submit"
+                    onClick={SendCreateUser}
+                />
             </form>
         </section>
     );
