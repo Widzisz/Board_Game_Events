@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './create_user.scss';
 import db from '../../firebase';
 import { useForm } from 'react-hook-form';
@@ -6,7 +6,6 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { Link } from 'react-router-dom';
-import SendCreateUser from './SendCreatUser';
 
 const schema = yup.object().shape({
     userName: yup.string().required('What is your name?'),
@@ -20,6 +19,10 @@ const schema = yup.object().shape({
 });
 
 const CreateUser = () => {
+    const [name, setName] = useState();
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+
     const {
         register,
         handleSubmit,
@@ -30,6 +33,27 @@ const CreateUser = () => {
     const submitForm = data => {
         console.log(data);
     };
+
+    const handleNameChange = event => {
+        return setName(event.target.value);
+    };
+    const handleEmailChange = event => {
+        return setEmail(event.target.value);
+    };
+    const handlePasswordChange = event => {
+        return setPassword(event.target.value);
+    };
+    const handleCreate = () => {
+        const id = Math.round(Math.random() * 10000000).toString();
+        const eventUser = {
+            id,
+            name: name,
+            email: email,
+            password: password,
+        };
+        db.collection('new-user').doc(id).set(eventUser);
+    };
+
     return (
         <section className="form__container">
             <form className="form" onSubmit={handleSubmit(submitForm)}>
@@ -37,6 +61,7 @@ const CreateUser = () => {
 
                 <input
                     className="form__input"
+                    onChange={handleNameChange}
                     type="text"
                     name="firstName"
                     placeholder="Your Name"
@@ -45,6 +70,7 @@ const CreateUser = () => {
                 <p className="error">{errors.userName?.message}</p>
                 <input
                     className="form__input"
+                    onChange={handleEmailChange}
                     type="text"
                     name="email"
                     placeholder="Email"
@@ -53,6 +79,7 @@ const CreateUser = () => {
                 <p className="error">{errors.email?.message}</p>
                 <input
                     className="form__input"
+                    onChange={handlePasswordChange}
                     type="password"
                     name="password"
                     placeholder="Password"
@@ -69,14 +96,17 @@ const CreateUser = () => {
                 <p className="error">
                     {errors.confirmPassword && 'Password Should Match!'}
                 </p>
-
-                <input
-                    id="submit"
-                    className="form__btn"
-                    type="submit"
-                    value="submit"
-                    onClick={SendCreateUser}
-                />
+                <Link to="./" className="form__btn">
+                    <button
+                        id="submit"
+                        className="form__btn"
+                        type="submit"
+                        value="submit"
+                        onClick={handleCreate}
+                    >
+                        Submit
+                    </button>
+                </Link>
             </form>
         </section>
     );

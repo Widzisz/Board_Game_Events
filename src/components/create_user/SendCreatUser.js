@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
+// import db from '../../firebase';
 
-const SendCreateUser = event => {
-    //     const id = Math.round(Math.random() * 10000000).toString();
-    //     const eventData = {
-    //         id,
-    //         date: date,
-    //         game: db.doc('board-games/' + game.title),
-    //         location: location,
-    //         players: [],
-    //         host: 'Host',
-    //         spots: players,
-    //     };
-    //     db.collection('board-game-events').doc(id).set(eventData);
-};
+// const SendCreateUser = event => {
+//     const [name, setName] = useState('');
+//     const [email, setEmail] = useState('');
+//     const [password, setPassword] = useState('');
+//     const id = Math.round(Math.random() * 10000000).toString();
+//     const eventUser = {
+//         id,
+//         name: name,
+//         email: email,
+//         password: password,
+//     };
+//     db.collection('new-user').doc(id).set(eventUser);
+// };
 
-export default SendCreateUser;
+// export default SendCreateUser;
