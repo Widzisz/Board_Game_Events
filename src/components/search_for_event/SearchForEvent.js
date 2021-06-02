@@ -3,21 +3,14 @@ import { useState } from 'react/cjs/react.development';
 import './search_for_event.scss';
 import BoardGameEvent from '../board_game_event/BoardGameEvent';
 
-const SearchForEvent = () => {
-    const [searchEvent, setSearchEvent] = useState('');
-
-    const searchTitle = title => {
-        return title.filter(ele => ele.title.toLowerCase().indexOf(searchEvent));
-    };
-
+const SearchForEvent = ({ setTitle }) => {
     return (
-        <div className="search__container">
+        <div className="searche__container">
             <input
                 type="text"
                 placeholder="Search for Event"
                 className="search__input"
-                value={searchEvent}
-                onChange={e => setSearchEvent(e.target.value)}
+                onChange={e => setTitle(e.target.value.toLowerCase())}
             ></input>
         </div>
     );
