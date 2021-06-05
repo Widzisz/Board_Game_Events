@@ -3,8 +3,9 @@ import './create_event.scss';
 import NavBar from '../nav_bar/NavBar';
 import getBoardGames from './GetBoardGames';
 import { Link } from 'react-router-dom';
-import db from '../../firebase';
+import db, { auth } from '../../firebase';
 import noImage from '../../Images/noImage.png';
+import userEvent from '@testing-library/user-event';
 
 const CreateEvent = () => {
     const [players, setPlayers] = useState(2);
@@ -48,7 +49,7 @@ const CreateEvent = () => {
             game: db.doc('board-games/' + game.title),
             location: location,
             players: [],
-            host: 'Host',
+            host: auth().currentUser.displayName,
             spots: players,
         };
 
@@ -58,13 +59,6 @@ const CreateEvent = () => {
     useEffect(() => {
         getBoardGames().then(setGames);
     }, []);
-
-    const createEmptyEvent = (numberOfPlayers, date) => {
-        const players = Array(numberOfPlayers).fill();
-        players[0] = { name: 'Host' };
-
-        return { players, date };
-    };
 
     const imageSource = game ? game.imageSource : noImage;
     const noGameChoosen = !game;
