@@ -16,8 +16,8 @@ const BoardGameEvent = ({ game, date, spots, location, players, host, id, reload
 
         if (loggedInUserDisplayName === host) {
             return null;
-        } else if (playerParticitpates) {
-            return <button></button>
+        // } else if (playerParticitpates) {
+        //     return <button></button>
         } else if (spotsLeft ) {
             return <button onClick={addPlayer}>Join</button>
         } else {
@@ -25,8 +25,6 @@ const BoardGameEvent = ({ game, date, spots, location, players, host, id, reload
         }
     }
 
-
-   
     return (
         <>
         <div className="event__container">
